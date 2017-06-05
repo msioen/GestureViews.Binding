@@ -16,6 +16,29 @@
   <remove-node
       path="/api/package[@name='com.alexvasilkov.gestures.transition']" />
   
+  <!-- Fix name clashes -->
+  <attr 
+    path="/api/package[@name='com.alexvasilkov.gestures']/class[@name='Settings']/field[@name='MAX_ZOOM']" 
+    name="managedName">
+    MAX_ZOOM
+  </attr>
+  <attr
+    path="/api/package[@name='com.alexvasilkov.gestures']/class[@name='Settings']/field[@name='OVERZOOM_FACTOR']"
+    name="managedName">
+    OVERZOOM_FACTOR
+  </attr>
+  <attr
+    path="/api/package[@name='com.alexvasilkov.gestures']/class[@name='Settings']/field[@name='ANIMATIONS_DURATION']"
+    name="managedName">
+    ANIMATIONS_DURATION
+  </attr>
+  
+    <attr
+    path="/api/package[@name='com.alexvasilkov.gestures.views.interfaces']/interface[@name='ClipBounds']/method[@name='clipBounds']"
+    name="managedName">
+    InvokeClipBounds
+  </attr>
+  
   <!-- Fix covariance issues -->
   <!-- All users of IGestureView currently return GestureControllerForPager so it's safe to change the interface to the more specific class -->
   <attr
@@ -23,16 +46,5 @@
       name="managedReturn">
     Com.Alexvasilkov.Gestures.GestureControllerForPager
   </attr>
-  
-  <!--<attr
-      path="/api/package[@name='com.alexvasilkov.gestures.views']/class[@name='GestureFrameLayout']/method[@name='getController']"
-      name="managedReturn">
-    Com.Alexvasilkov.Gestures.GestureControllerForPager
-  </attr>
-  <attr
-      path="/api/package[@name='com.alexvasilkov.gestures.views']/class[@name='GestureImageView']/method[@name='getController']"
-      name="managedReturn">
-    Com.Alexvasilkov.Gestures.GestureControllerForPager
-  </attr>-->
 
 </metadata>

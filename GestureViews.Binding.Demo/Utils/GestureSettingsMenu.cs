@@ -30,7 +30,7 @@ namespace GestureViews.Binding.Demo.Utils
 
             float overscrollX = isOverscrollXEnabled ? OVERSCROLL : 0f;
             float overscrollY = isOverscrollYEnabled ? OVERSCROLL : 0f;
-            float overzoom = isOverzoomEnabled ? 2f : 1f;
+            float overzoom = isOverzoomEnabled ? Settings.OVERZOOM_FACTOR : 1f;
 
             view.Controller.Settings
                     .SetPanEnabled(isPanEnabled)
@@ -44,7 +44,7 @@ namespace GestureViews.Binding.Demo.Utils
                     .SetFillViewport(isFillViewport)
                     .SetFitMethod(fitMethod)
                     .SetGravity(gravity)
-                    .SetAnimationsDuration(isSlow ? SLOW_ANIMATIONS : 300L);
+                    .SetAnimationsDuration(isSlow ? SLOW_ANIMATIONS : Settings.ANIMATIONS_DURATION);
         }
 
         public bool OnCreateOptionsMenu(IMenu menu)
