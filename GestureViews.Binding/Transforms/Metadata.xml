@@ -1,0 +1,38 @@
+<metadata>
+  <!--
+  This sample removes the class: android.support.v4.content.AsyncTaskLoader.LoadTask:
+  <remove-node path="/api/package[@name='android.support.v4.content']/class[@name='AsyncTaskLoader.LoadTask']" />
+  
+  This sample removes the method: android.support.v4.content.CursorLoader.loadInBackground:
+  <remove-node path="/api/package[@name='android.support.v4.content']/class[@name='CursorLoader']/method[@name='loadInBackground']" />
+  -->
+
+  <!-- Transition code contains generics which the binding doesn't deal well with
+       => currently we strip out the transition bits -->
+  <remove-node
+      path="/api/package[@name='com.alexvasilkov.gestures.transition.internal']" />
+  <remove-node
+      path="/api/package[@name='com.alexvasilkov.gestures.transition.tracker']" />
+  <remove-node
+      path="/api/package[@name='com.alexvasilkov.gestures.transition']" />
+  
+  <!-- Fix covariance issues -->
+  <!-- All users of IGestureView currently return GestureControllerForPager so it's safe to change the interface to the more specific class -->
+  <attr
+      path="/api/package[@name='com.alexvasilkov.gestures.views.interfaces']/interface[@name='GestureView']/method[@name='getController']"
+      name="managedReturn">
+    Com.Alexvasilkov.Gestures.GestureControllerForPager
+  </attr>
+  
+  <!--<attr
+      path="/api/package[@name='com.alexvasilkov.gestures.views']/class[@name='GestureFrameLayout']/method[@name='getController']"
+      name="managedReturn">
+    Com.Alexvasilkov.Gestures.GestureControllerForPager
+  </attr>
+  <attr
+      path="/api/package[@name='com.alexvasilkov.gestures.views']/class[@name='GestureImageView']/method[@name='getController']"
+      name="managedReturn">
+    Com.Alexvasilkov.Gestures.GestureControllerForPager
+  </attr>-->
+
+</metadata>
