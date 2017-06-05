@@ -2435,6 +2435,54 @@ namespace GestureViews.Binding.Demo
 			// aapt resource value: 0x7f050012
 			public const int abc_toolbar_collapse_description = 2131034130;
 			
+			// aapt resource value: 0x7f050032
+			public const int menu_crop_circle = 2131034162;
+			
+			// aapt resource value: 0x7f050030
+			public const int menu_crop_rect = 2131034160;
+			
+			// aapt resource value: 0x7f050031
+			public const int menu_crop_square = 2131034161;
+			
+			// aapt resource value: 0x7f05002a
+			public const int menu_enable_exit = 2131034154;
+			
+			// aapt resource value: 0x7f05002f
+			public const int menu_enable_overlay = 2131034159;
+			
+			// aapt resource value: 0x7f050027
+			public const int menu_enable_overscroll_x = 2131034151;
+			
+			// aapt resource value: 0x7f050028
+			public const int menu_enable_overscroll_y = 2131034152;
+			
+			// aapt resource value: 0x7f050029
+			public const int menu_enable_overzoom = 2131034153;
+			
+			// aapt resource value: 0x7f050023
+			public const int menu_enable_pan = 2131034147;
+			
+			// aapt resource value: 0x7f050025
+			public const int menu_enable_rotation = 2131034149;
+			
+			// aapt resource value: 0x7f05002e
+			public const int menu_enable_slow = 2131034158;
+			
+			// aapt resource value: 0x7f050024
+			public const int menu_enable_zoom = 2131034148;
+			
+			// aapt resource value: 0x7f05002b
+			public const int menu_fill_viewport = 2131034155;
+			
+			// aapt resource value: 0x7f05002c
+			public const int menu_fit_method = 2131034156;
+			
+			// aapt resource value: 0x7f05002d
+			public const int menu_gravity = 2131034157;
+			
+			// aapt resource value: 0x7f050026
+			public const int menu_restrict_rotation = 2131034150;
+			
 			// aapt resource value: 0x7f050013
 			public const int search_menu_title = 2131034131;
 			

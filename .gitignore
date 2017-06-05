@@ -16,6 +16,7 @@ packages/repositories.config
 AppPackages/
 
 TestResult.xml
+*Resource.designer.cs
 
 # Built application files
 *.apk

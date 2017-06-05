@@ -7,6 +7,7 @@ using Android.Widget;
 using GestureViews.Binding.Demo.Adapters;
 using GestureViews.Binding.Demo.Utils;
 using System;
+using Android.Views;
 
 namespace GestureViews.Binding.Demo.Activities
 {
@@ -19,7 +20,11 @@ namespace GestureViews.Binding.Demo.Activities
     public class Ex1ImageViewSampleActivity : BaseActivity, ViewPager.IOnPageChangeListener
     {
         Painting[] _paintings;
+
+        ViewPager _viewPager;
         TextView _txtTitle;
+
+        GestureSettingsMenu _settingsMenu;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -33,13 +38,34 @@ namespace GestureViews.Binding.Demo.Activities
 
             _paintings = PaintingsHelper.GetPaintings(Resources);
 
+            _settingsMenu = new GestureSettingsMenu();
+
             _txtTitle = FindViewById<TextView>(Resource.Id.painting_title);
 
-            var viewPager = FindViewById<ViewPager>(Resource.Id.paintings_view_pager);
-            viewPager.Adapter = new PaintingsPagerAdapter(viewPager, _paintings);
-            viewPager.AddOnPageChangeListener(this);
-            viewPager.PageMargin = Resources.GetDimensionPixelSize(Resource.Dimension.view_pager_margin);
+            _viewPager = FindViewById<ViewPager>(Resource.Id.paintings_view_pager);
+            _viewPager.Adapter = new PaintingsPagerAdapter(_viewPager, _paintings, _settingsMenu);
+            _viewPager.AddOnPageChangeListener(this);
+            _viewPager.PageMargin = Resources.GetDimensionPixelSize(Resource.Dimension.view_pager_margin);
             OnPageSelected(0);
+        }
+
+        public override bool OnCreateOptionsMenu(IMenu menu)
+        {
+            return _settingsMenu.OnCreateOptionsMenu(menu);
+        }
+
+        public override bool OnOptionsItemSelected(IMenuItem item)
+        {
+            if (_settingsMenu.OnOptionsItemSelected(item))
+            {
+                SupportInvalidateOptionsMenu();
+                _viewPager.Adapter.NotifyDataSetChanged();
+                return true;
+            }
+            else
+            {
+                return base.OnOptionsItemSelected(item);
+            }
         }
 
         public void OnPageScrolled(int position, float positionOffset, int positionOffsetPixels)

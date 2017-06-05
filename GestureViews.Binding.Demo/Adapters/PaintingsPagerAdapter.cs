@@ -10,11 +10,14 @@ namespace GestureViews.Binding.Demo.Adapters
     {
         ViewPager _viewPager;
         Painting[] _paintings;
+        IGestureSettingsSetupListener _setupListener;
 
-        public PaintingsPagerAdapter(ViewPager pager, Painting[] paintings)
+        public PaintingsPagerAdapter(ViewPager pager, Painting[] paintings,
+            IGestureSettingsSetupListener setupListener)
         {
             _viewPager = pager;
             _paintings = paintings;
+            _setupListener = setupListener;
         }
 
         public override int Count
@@ -35,6 +38,7 @@ namespace GestureViews.Binding.Demo.Adapters
         public override void OnBindViewHolder(Java.Lang.Object p0, int p1)
         {
             var holder = (PaintingsViewHolder)p0;
+            _setupListener?.OnSetupGestureView(holder.Image);
             holder.Image.SetImageResource(_paintings[p1].ImageId);
         }
 
