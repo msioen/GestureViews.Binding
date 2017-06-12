@@ -38,13 +38,5 @@
     name="managedName">
     InvokeClipBounds
   </attr>
-  
-  <!-- Fix covariance issues -->
-  <!-- All users of IGestureView currently return GestureControllerForPager so it's safe to change the interface to the more specific class -->
-  <attr
-      path="/api/package[@name='com.alexvasilkov.gestures.views.interfaces']/interface[@name='GestureView']/method[@name='getController']"
-      name="managedReturn">
-    Com.Alexvasilkov.Gestures.GestureControllerForPager
-  </attr>
 
 </metadata>

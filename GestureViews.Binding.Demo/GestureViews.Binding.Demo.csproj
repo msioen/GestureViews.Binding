@@ -103,6 +103,7 @@
     <Compile Include="Activities\BaseActivity.cs" />
     <Compile Include="Activities\Ex1ImageViewSampleActivity.cs" />
     <Compile Include="Activities\Ex2FrameLayoutSampleActivity.cs" />
+    <Compile Include="Activities\Ex3CustomViewSampleActivity.cs" />
     <Compile Include="Adapters\PaintingsPagerAdapter.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Adapters\PaintingsLayoutsPagerAdapter.cs" />
@@ -113,6 +114,7 @@
     <Compile Include="Utils\GestureSettingsSetupListener.cs" />
     <Compile Include="Utils\Painting.cs" />
     <Compile Include="Utils\PaintingsHelper.cs" />
+    <Compile Include="Views\GestureTextView.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -128,6 +130,9 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\activity_ex1_image_view.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\activity_ex3_custom_view.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
