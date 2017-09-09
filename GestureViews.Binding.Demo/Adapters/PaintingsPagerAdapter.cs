@@ -6,7 +6,7 @@ using GestureViews.Binding.Demo.Utils;
 
 namespace GestureViews.Binding.Demo.Adapters
 {
-    public class PaintingsPagerAdapter : RecyclePagerAdapter
+    public class PaintingsPagerAdapter : RecyclePagerAdapter<PaintingsViewHolder>
     {
         ViewPager _viewPager;
         Painting[] _paintings;
@@ -22,35 +22,31 @@ namespace GestureViews.Binding.Demo.Adapters
 
         public override int Count
         {
-            get
-            {
-                return _paintings.Length;
-            }
+            get { return _paintings.Length; }
         }
 
-        public override Java.Lang.Object OnCreateViewHolder(ViewGroup p0)
+        public override PaintingsViewHolder OnCreateViewHolder(ViewGroup container)
         {
-            var holder = new PaintingsViewHolder(p0);
+            var holder = new PaintingsViewHolder(container);
             holder.Image.Controller.EnableScrollInViewPager(_viewPager);
             return holder;
         }
 
-        public override void OnBindViewHolder(Java.Lang.Object p0, int p1)
+        public override void OnBindViewHolder(PaintingsViewHolder holder, int position)
         {
-            var holder = (PaintingsViewHolder)p0;
             _setupListener?.OnSetupGestureView(holder.Image);
-            holder.Image.SetImageResource(_paintings[p1].ImageId);
+            holder.Image.SetImageResource(_paintings[position].ImageId);
         }
+    }
 
-        class PaintingsViewHolder : RecyclePagerAdapter.ViewHolder
+    public class PaintingsViewHolder : RecyclePagerAdapter.ViewHolder
+    {
+        public GestureImageView Image { get; }
+
+        public PaintingsViewHolder(ViewGroup container)
+            : base(new GestureImageView(container.Context))
         {
-            public GestureImageView Image { get; }
-
-            public PaintingsViewHolder(ViewGroup container)
-                : base(new GestureImageView(container.Context))
-            {
-                Image = (GestureImageView)ItemView;
-            }
+            Image = (GestureImageView)ItemView;
         }
     }
 }

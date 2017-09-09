@@ -75,12 +75,15 @@
   <ItemGroup>
     <Compile Include="Additions\GestureFrameLayout.cs" />
     <Compile Include="Additions\GestureImageView.cs" />
+    <Compile Include="Additions\RecyclePagerAdapter.cs" />
+    <Compile Include="Additions\RequestListener.cs" />
+    <Compile Include="Additions\ViewsCoordinator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Jars\AboutJars.txt" />
     <None Include="Additions\AboutAdditions.txt" />
-    <LibraryProjectZip Include="Jars\gestureviews-2.3.1.aar" />
+    <LibraryProjectZip Include="Jars\gestureviews-2.3.2.aar" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
