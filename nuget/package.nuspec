@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+	<metadata>
+		<id>GestureViews.Binding</id>
+		<version>2.3.2</version>
+		<title>GestureViews - Xamarin Android Binding</title>
+		<authors>Michiel Sioen</authors>
+		<owners>Michiel Sioen</owners>
+		<licenseUrl>https://github.com/msioen/GestureViews.Binding/blob/master/LICENSE</licenseUrl>
+		<projectUrl>https://github.com/msioen/GestureViews.Binding</projectUrl>
+		<requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<description>ImageView and FrameLayout with gestures control</description>
+		<tags>xamarin, xamarin.android, android, imageview, gesture</tags>
+		<dependencies>
+			  <dependency id="Xamarin.Android.Support.v4" version="25.3.1" />
+		</dependencies>
+	</metadata>
+	<files>
+
+	<file src="..\GestureViews.Binding\bin\Release\GestureViews.Binding.dll" target="lib\MonoAndroid\GestureViews.Binding.dll" />
+
+	</files>
+</package>
